@@ -1,95 +1,58 @@
+'use client'
+
 import Image from "next/image";
-import styles from "./page.module.css";
+import NavigationNavbar from "@/components/Navbar/NavigationNavbar";
+import { Button, ConfigProvider, Flex } from "antd";
+import localFont from 'next/font/local';
+import ArrowRight from './assets/svgs/arrow_right.svg';
+import SectionCarousel from "@/sections/SectionCarousel";
+import SectionList from "@/sections/SectionList";
+import SectionThree from "@/sections/SectionThree";
+import Footer from "@/components/Footer/Footer";
+import Tilt from 'react-parallax-tilt';
+
+const helvetic700 = localFont({
+  src: './assets/font/HelveticaNeueBold.otf'
+});
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: "#FBB90F",
+            fontFamily: "Helvetica",
+          }
+        }}
+      >
+        <div className="container">
+          <NavigationNavbar />
+          <div className="hero">
+            <div className="wrapper">
+              <div className="wrapper_left">
+                <h1 className={`wrapper_title ${helvetic700.className}`}>Embrace innovation,<br /> optimize processes,<br />  and enhance customer<br /> engagement through<br /> digital transformation</h1>
+                <Flex gap="small" wrap className="flex_btn">
+                  <Button type="primary" className={helvetic700.className}><span className={helvetic700.className}>Let’s Talk</span></Button>
+                  <Button type="text"><span className={helvetic700.className}>See works</span></Button>
+                  <div className="arrow_btn">
+                    <img src={ArrowRight.src} alt="arrow-right" />
+                  </div>
+                </Flex>
+              </div>
+              <div className="wrapper_right">
+                <Tilt>
+                  <Image src={require("./assets/arrowUpImage.png")} alt="Embrace innovation, optimize processes, and enhance customer engagement through digital transformation" className={"hero_img"} />
+                </Tilt>
+              </div>
+            </div>
+          </div>
+          <SectionCarousel />
+          <SectionList />
+          <SectionThree />
+          <Footer />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      </ConfigProvider>
     </main>
   );
 }

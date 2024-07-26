@@ -1,0 +1,62 @@
+.card_carousel {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+
+.card {
+    margin: 0 auto;
+    width: 300px;
+    text-align: center;
+    border-radius: 8px;
+    overflow: hidden;
+}
+  
+.card_img {
+    width: 430px;
+    height: 535px;
+    object-fit: cover;
+    border-radius: 3px;
+}  
+
+.card_title {
+    margin-top: 30px;
+    color: #2F2F2F;
+    font-size: 24px;
+}
+
+.card_text {
+    margin-top: 5px;
+    color: #767676;
+    font-size: 18px;
+}
+
+.carousel_mobile {
+    display: none;
+}
+
+@media screen and (max-width: 750px) {
+    .card_img {
+        width: 235px;
+        height: 295px;
+    }
+    .carousel_mobile {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .carousel_pk {
+        display: none !important;
+    }
+    .card_title {
+        margin-top: 10px;
+    }
+}
