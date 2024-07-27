@@ -108,7 +108,7 @@
     }
     .burger_menu {
       display: block;
-      position: fixed;
+      /* position: fixed; */
       right: 20px;
     }
     .burger_menu.open .burger_icon:nth-child(1) {
