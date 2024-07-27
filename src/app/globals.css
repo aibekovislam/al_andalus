@@ -35,6 +35,24 @@ a {
   margin-top: 50px;
 }
 
+.btn_hero {
+  width: 145px;
+  border: none;
+  cursor: pointer;
+  border-radius: 100px;
+  background: #fbb90f;
+  color: #ffffff;
+  font-size: 22px;
+}
+
+.btn_hero_text {
+  background-color: transparent;
+  border: none;
+  width: 145px;
+  font-size: 22px;
+  cursor: pointer;
+}
+
 .wrapper {
   display: flex;
   align-items: center;

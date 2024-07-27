@@ -33,8 +33,8 @@ export default function Home() {
               <div className="wrapper_left">
                 <h1 className={`wrapper_title ${helvetic700.className}`}>Embrace innovation,<br /> optimize processes,<br />  and enhance customer<br /> engagement through<br /> digital transformation</h1>
                 <Flex gap="small" wrap className="flex_btn">
-                  <Button type="primary" className={helvetic700.className}><span className={helvetic700.className}>Let’s Talk</span></Button>
-                  <Button type="text"><span className={helvetic700.className}>See works</span></Button>
+                  <button className={`btn_hero ${helvetic700.className}`}><span className={helvetic700.className}>Let’s Talk</span></button>
+                  <button className={`btn_hero_text ${helvetic700.className}`}><span className={helvetic700.className}>See works</span></button>
                   <div className="arrow_btn">
                     <img src={ArrowRight.src} alt="arrow-right" />
                   </div>
