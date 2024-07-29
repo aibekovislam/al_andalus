@@ -66,9 +66,11 @@
     .footer_navigation {
         flex-wrap: wrap;
         row-gap: 5.5px;
+        column-gap: 20px;
+        justify-content: center;
     }
     .footer_title {
-        font-size: 72px;
+        font-size: 16vw;
     }
     .logo_block img {
         width: 20px;

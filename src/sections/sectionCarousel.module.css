@@ -75,6 +75,18 @@
     margin-left: 35px;
 }
 
+.list_item_mobile {
+    font-size: 24px;
+    max-width: 720px;
+    transition-duration: 0.3s;
+    color: #434343;
+    cursor: pointer;
+}
+
+.list_item_mobile:hover {
+    color: #FBB90F;
+}
+
 .section_two_img {
     width: 450px;
     height: auto;

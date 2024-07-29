@@ -25,7 +25,7 @@ const SectionCarousel = () => {
   };
 
   return (
-    <section className={styles.portfolio_section}>
+    <section className={styles.portfolio_section} id='portfolio' >
         <div className={styles.portfolio_df}>
             <h2 className={`${styles.portfolio_title} ${helvetic700.className}`}>Portfolio</h2>
             <div className={styles.portfolio_df_btn}>

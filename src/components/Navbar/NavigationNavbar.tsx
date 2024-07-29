@@ -16,8 +16,13 @@ const NavigationNavbar = () => {
   const handleItemClick = (item: string) => {
     setActiveItem(item);
     setMenuOpen(false);
+  
+    const section = document.getElementById(item.toLowerCase());
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
-
+    
   const toggleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -41,8 +46,6 @@ const NavigationNavbar = () => {
         <ul className={`${styles.navigation} ${isMenuOpen ? styles.open : ''}`}>
           <li className={`${styles.nav_item} ${helvetic700.className} ${activeNavbar === 'Main' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Main')}>Main</li>
           <li className={`${styles.nav_item} ${helvetic700.className} ${activeNavbar === 'Portfolio' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Portfolio')}>Portfolio</li>
-          <li className={`${styles.nav_item} ${helvetic700.className} ${activeNavbar === 'About' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('About')}>About</li>
-          <li className={`${styles.nav_item} ${helvetic700.className} ${activeNavbar === 'Labs' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Labs')}>Labs</li>
           <li className={`${styles.nav_item} ${helvetic700.className} ${activeNavbar === 'Contacts' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Contacts')}>Contacts</li>
         </ul>
         <div className={`${styles.burger_menu} ${isMenuOpen ? styles.open : ''}`} onClick={toggleMenu}>
@@ -54,8 +57,6 @@ const NavigationNavbar = () => {
           <ul className={styles.burger_menu_nav_items}>
             <li className={`${styles.nav_items} ${helvetic700.className} ${activeNavbar === 'Main' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Main')}>Main</li>
             <li className={`${styles.nav_items} ${helvetic700.className} ${activeNavbar === 'Portfolio' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Portfolio')}>Portfolio</li>
-            <li className={`${styles.nav_items} ${helvetic700.className} ${activeNavbar === 'About' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('About')}>About</li>
-            <li className={`${styles.nav_items} ${helvetic700.className} ${activeNavbar === 'Labs' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Labs')}>Labs</li>
             <li className={`${styles.nav_items} ${helvetic700.className} ${activeNavbar === 'Contacts' ? styles.active_navbar : ''}`} onClick={() => handleItemClick('Contacts')}>Contacts</li>
           </ul>
         </div>

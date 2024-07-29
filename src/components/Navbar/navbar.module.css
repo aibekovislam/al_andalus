@@ -98,6 +98,8 @@
     list-style-type: none;
     font-size: 32px;
   }
+
+  
   
   @media screen and (max-width: 750px) {
     .navbar {
@@ -109,6 +111,10 @@
     .burger_menu {
       display: block;
       /* position: fixed; */
+      right: 20px;
+    }
+    .burger_menu.open {
+      position: fixed;
       right: 20px;
     }
     .burger_menu.open .burger_icon:nth-child(1) {

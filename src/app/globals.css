@@ -16,6 +16,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: #FFFAEC;
   color: #2F2F2F;
@@ -131,7 +135,7 @@ a {
     margin: 0 20px;
   }
   .wrapper_title {
-    font-size: 36px;
+    font-size: 8vw;
     line-height: 30px;
     width: 100%;
   }
@@ -143,5 +147,11 @@ a {
   }
   .section_two_df_mobile {
     display: flex;
+  }
+  .btn_hero {
+    width: 33vw;
+  }
+  .btn_hero_text {
+    width: 33vw;
   }
 }
