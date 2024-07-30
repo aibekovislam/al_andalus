@@ -40,64 +40,64 @@ const CustomCarousel = forwardRef((props, ref: any) => {
         ]
       }>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
       </Carousel>
       <div className={styles.carousel_mobile}>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>
         <div>
-          <Image src={require("../../app/assets/cat.jpeg")} alt='image card' className={styles.card_img} />
+          <Image src={require("../../../public/images/cat.jpeg")} alt='image card' className={styles.card_img} />
           <h2 className={`${styles.card_title} ${helvetic700.className}`}>Hot Type</h2>
           <p className={styles.card_text}>Red hot type animations</p>
         </div>

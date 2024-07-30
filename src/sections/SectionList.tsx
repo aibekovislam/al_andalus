@@ -1,52 +1,56 @@
 import React, { useState, useEffect } from 'react';
 import styles from './sectionCarousel.module.css';
-import Image from 'next/image';
 import localFont from 'next/font/local';
+import DynamicImageBlur from '@/components/CustomImage/DynamicImageBlur';
 
 const helvetic700 = localFont({
   src: '../app/assets/font/HelveticaNeueBold.otf'
 });
 
 const services = [
-  { name: 'Frontend', img: require("../app/assets/cat.jpeg") },
-  { name: 'Mobile development', img: require("../app/assets/cat2.jpg") },
-  { name: 'UX.UI design', img: require("../app/assets/cat3.jpg") },
-  { name: 'Backend', img: require("../app/assets/cat4.webp") },
-  { name: 'AI development', img: require("../app/assets/cat5.webp") },
-  { name: 'Product development', img: require("../app/assets/cat6.jpg") },
-  { name: 'Web design', img: require("../app/assets/cat7.webp") },
-  { name: 'Web Site', img: require("../app/assets/cat8.jpg") },
-  { name: 'Graphic design', img: require("../app/assets/cat9.jpg") },
-  { name: '3D design', img: require("../app/assets/cat10.jpg") },
-  { name: 'Branding', img: require("../app/assets/cat11.jpg") }
+  { name: 'Frontend', img: "/images/cat.jpeg" },
+  { name: 'Mobile development', img: "/images/cat2.jpg" },
+  { name: 'UX.UI design', img: "/images/cat3.jpg" },
+  { name: 'Backend', img: "/images/cat4.webp" },
+  { name: 'AI development', img: "/images/cat5.webp" },
+  { name: 'Product development', img: "/images/cat6.jpg" },
+  { name: 'Web design', img: "/images/cat7.webp" },
+  { name: 'Web Site', img: "/images/cat8.jpg" },
+  { name: 'Graphic design', img: "/images/cat9.jpg" },
+  { name: '3D design', img: "/images/cat10.jpg" },
+  { name: 'Branding', img: "/images/cat11.jpg" }
 ];
 
-const SectionList = () => {
-  const [currentImage, setCurrentImage] = useState(require("../app/assets/cat.jpeg"));
+const defaultImage = "/images/cat.jpeg";
+
+const SectionList = ({ initialImage, initialBase64 }: any) => {
+  const [currentImage, setCurrentImage] = useState(initialImage ? initialImage : defaultImage);
   const [imageKey, setImageKey] = useState(0);
-  const [imageLoaded, setImageLoaded] = useState(false);
+  const [base64, setBase64] = useState(initialBase64);
+  const [activeItem, setActiveItem] = useState(initialImage);
 
   useEffect(() => {
-    setImageLoaded(false); // сброс состояния загрузки при изменении изображения
-  }, [currentImage]);
+    const fetchBase64 = async (img: string) => {
+      const res = await fetch(`/api/image-placeholder?src=${img}`);
+      const data = await res.json();
+      setBase64(data.base64);
+    };
+
+    if (currentImage !== initialImage) {
+      fetchBase64(currentImage);
+    }
+  }, [currentImage, initialImage]);
 
   const handleMouseEnter = (img: string) => {
     setImageKey(prevKey => prevKey + 1);
     setCurrentImage(img);
-  }
-
-  const handleMouseLeave = () => {
-    setImageKey(prevKey => prevKey + 1);
-    setCurrentImage(require("../app/assets/cat.jpeg"));
+    setActiveItem(img);
   }
 
   const handleClick = (img: string) => {
     setImageKey(prevKey => prevKey + 1);
     setCurrentImage(img);
-  }
-
-  const handleImageLoad = () => {
-    setImageLoaded(true);
+    setActiveItem(img);
   }
 
   return (
@@ -54,21 +58,14 @@ const SectionList = () => {
       <div className={styles.section_two_df}>
         <div className={styles.section_two_title}>
           <h3>Services</h3>
-          <Image 
-            key={imageKey} 
-            src={currentImage} 
-            className={`${styles.section_two_img} ${imageLoaded ? 'loaded' : ''}`} 
-            onLoadingComplete={handleImageLoad}
-            alt='section two image' 
-          />
+          <DynamicImageBlur src={currentImage} key={imageKey} base64={base64} alt="section two image" />
         </div>
         <div className={styles.list}>
           {services.map(service => (
             <span
               key={service.name}
-              className={`${styles.list_item} ${helvetic700.className}`}
+              className={`${styles.list_item} ${activeItem === service.img ? styles.active_item : ""} ${helvetic700.className}`}
               onMouseEnter={() => handleMouseEnter(service.img)}
-              onMouseLeave={handleMouseLeave}
               onClick={() => handleClick(service.img)}
             >
               {service.name}
@@ -91,17 +88,23 @@ const SectionList = () => {
             </span>
           ))}
         </div>
-        <Image 
-          key={imageKey} 
-          src={currentImage} 
-          className={`${styles.section_two_img} ${imageLoaded ? 'loaded' : ''}`} 
-          onLoadingComplete={handleImageLoad}
-          alt='section two image'
-          placeholder='blur'
-        />
+        <DynamicImageBlur src={currentImage} key={imageKey} base64={base64} alt="section two image" />
       </div>
     </section>
   );
+}
+
+export async function getServerSideProps() {
+  const initialImage = '/images/cat.jpeg';
+  const res = await fetch(`http://localhost:3000/api/image-placeholder?src=${initialImage}`);
+  const { base64 } = await res.json();
+
+  return {
+    props: {
+      initialImage,
+      initialBase64: base64,
+    },
+  };
 }
 
 export default SectionList;

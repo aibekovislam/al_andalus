@@ -25,6 +25,13 @@ body {
   color: #2F2F2F;
 }
 
+.section_two_image {
+  width: 450px;
+  height: auto;
+  object-fit: cover;
+  margin-top: 65px;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -153,5 +160,8 @@ a {
   }
   .btn_hero_text {
     width: 33vw;
+  }
+  .section_two_image {
+    width: 100%;
   }
 }

@@ -75,6 +75,11 @@
     margin-left: 35px;
 }
 
+.active_item {
+    color: #FBB90F;
+    margin-left: 35px;
+}
+
 .list_item_mobile {
     font-size: 24px;
     max-width: 720px;
@@ -90,8 +95,10 @@
 .section_two_img {
     width: 450px;
     height: auto;
+    object-fit: cover;
     margin-top: 65px;
     animation: imageFade 0.7s ease-in-out;
+    filter: blur(1)
 }
 
 .section_two_img.loaded {
