@@ -26,17 +26,17 @@ const SectionList = () => {
   const [imageKey, setImageKey] = useState(0);
 
   const handleMouseEnter = (img: string) => {
-    setImageKey(prevKey => prevKey + 1); // Увеличиваем ключ, чтобы применить анимацию
+    setImageKey(prevKey => prevKey + 1);
     setCurrentImage(img);
   }
 
   const handleMouseLeave = () => {
-    setImageKey(prevKey => prevKey + 1); // Увеличиваем ключ, чтобы применить анимацию
+    setImageKey(prevKey => prevKey + 1);
     setCurrentImage(require("../app/assets/cat.jpeg"));
   }
 
   const handleClick = (img: string) => {
-    setImageKey(prevKey => prevKey + 1); // Увеличиваем ключ, чтобы применить анимацию
+    setImageKey(prevKey => prevKey + 1);
     setCurrentImage(img);
   }
 
