@@ -91,6 +91,7 @@
     width: 450px;
     height: auto;
     margin-top: 65px;
+    animation: imageFade 0.7s ease-in-out;
 }
 
 
@@ -100,7 +101,7 @@
 
 .section_three_items {
     display: flex;
-    column-gap: 30px;
+    justify-content: space-between;
 }
 
 .section_three_text {
@@ -136,6 +137,15 @@
 
 .section_two_df_mobile {
     display: none;
+}
+
+
+@keyframes imageFade {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
 }
 
 @media screen and (max-width: 750px) {
