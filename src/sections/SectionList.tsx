@@ -96,7 +96,8 @@ const SectionList = () => {
           src={currentImage} 
           className={`${styles.section_two_img} ${imageLoaded ? 'loaded' : ''}`} 
           onLoadingComplete={handleImageLoad}
-          alt='section two image' 
+          alt='section two image'
+          placeholder='blur'
         />
       </div>
     </section>
