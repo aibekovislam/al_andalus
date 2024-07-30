@@ -94,6 +94,10 @@
     animation: imageFade 0.7s ease-in-out;
 }
 
+.section_two_img.loaded {
+    opacity: 1;
+    filter: blur(0);
+}
 
 .section_three {
     margin-top: 170px;

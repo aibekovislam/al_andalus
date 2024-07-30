@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './sectionCarousel.module.css';
 import Image from 'next/image';
 import localFont from 'next/font/local';
@@ -24,6 +24,11 @@ const services = [
 const SectionList = () => {
   const [currentImage, setCurrentImage] = useState(require("../app/assets/cat.jpeg"));
   const [imageKey, setImageKey] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setImageLoaded(false); // сброс состояния загрузки при изменении изображения
+  }, [currentImage]);
 
   const handleMouseEnter = (img: string) => {
     setImageKey(prevKey => prevKey + 1);
@@ -40,6 +45,10 @@ const SectionList = () => {
     setCurrentImage(img);
   }
 
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  }
+
   return (
     <section className={styles.section_two}>
       <div className={styles.section_two_df}>
@@ -48,7 +57,8 @@ const SectionList = () => {
           <Image 
             key={imageKey} 
             src={currentImage} 
-            className={styles.section_two_img} 
+            className={`${styles.section_two_img} ${imageLoaded ? 'loaded' : ''}`} 
+            onLoadingComplete={handleImageLoad}
             alt='section two image' 
           />
         </div>
@@ -84,7 +94,8 @@ const SectionList = () => {
         <Image 
           key={imageKey} 
           src={currentImage} 
-          className={styles.section_two_img} 
+          className={`${styles.section_two_img} ${imageLoaded ? 'loaded' : ''}`} 
+          onLoadingComplete={handleImageLoad}
           alt='section two image' 
         />
       </div>
