@@ -63,7 +63,7 @@ a {
 }
 
 .wrapper_title {
-  font-size: 92px;
+  font-size: 6vw;
   width: max-content;
   line-height: 72px;
   animation-name: showText;
@@ -76,7 +76,7 @@ a {
 }
 
 .hero_img {
-  width: 420px;
+  width: 30vw;
   height: 550px;
 }
 
