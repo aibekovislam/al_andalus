@@ -127,6 +127,10 @@
     justify-content: space-between;
 }
 
+.section_three_item {
+    
+}
+
 .section_three_text {
     margin-top: 15px;
     font-size: 20px;
@@ -169,6 +173,24 @@
 
 .section_two_df_mobile {
     display: none;
+}
+
+.section_three_image1 {
+    width: 25vw;
+    height: auto;
+    object-fit: cover;
+}
+
+.section_three_image2 {
+    width: 25vw;
+    height: auto;
+    object-fit: cover;
+}
+
+.section_three_image3 {
+    width: 30vw;
+    height: auto;
+    object-fit: cover;
 }
 
 
