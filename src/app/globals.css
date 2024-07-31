@@ -54,6 +54,11 @@ a {
   background: #fbb90f;
   color: #ffffff;
   font-size: 22px;
+  transition-duration: 0.3s;
+}
+
+.btn_hero:hover {
+  background: #f7c956;
 }
 
 .btn_two {
