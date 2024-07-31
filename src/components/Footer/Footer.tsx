@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './footer.module.css';
 import localFont from 'next/font/local';
 import logo from '../../app/assets/svgs/logo.svg';
+import LogoMain from '../../app/assets/svgs/logo_main.svg';
 
 const helvetic700 = localFont({
     src: '../../app/assets/font/HelveticaNeueBold.otf'
@@ -39,12 +40,13 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className={styles.footer_item_title}>
+            {/* <div className={styles.footer_item_title}>
                 <div className={`${styles.footer_title} ${helvetic700.className}`}>
                     Al Andalus
                     <div className={styles.logo_block}><img src={logo.src} alt='logo' /></div>
                 </div>
-            </div>
+            </div> */}
+            <img src={LogoMain.src} alt='logo' className={styles.footer_title} />
             <div className={styles.footer_small_text_df_mobile}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: "20px" }}>
                     <div className={styles.footer_small_text_item}>Index</div>

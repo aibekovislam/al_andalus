@@ -56,6 +56,17 @@ a {
   font-size: 22px;
 }
 
+.btn_two {
+  display: flex;
+  transition-duration: 0.3s;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.btn_two:hover {
+  background-color: rgba(38, 38, 38, 0.062);
+}
+
 .btn_hero_text {
   background-color: transparent;
   border: none;
@@ -163,5 +174,8 @@ a {
   }
   .section_two_image {
     width: 100%;
+  }
+  .btn_two {
+    padding: 0px;
   }
 }
