@@ -249,4 +249,7 @@
     .section_two_df_mobile {
         display: block;
     }
+    .list {
+        margin-left: 0px;
+    }
 }
