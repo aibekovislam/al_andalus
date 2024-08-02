@@ -53,7 +53,7 @@ export default function Home() {
                 /> */}
                 <p className={`hero_text ${helvetic700.className}`}>Innovate, optimize processes, enhance customer engagement.</p>
               </div>
-              <Image src={require("./assets/section.png")} alt="" className="hero_image" />
+              <Image src={require("./assets/section_main.png")} alt="" className="hero_image" />
               <div className="content">
                 <TypeAnimation
                   preRenderFirstString={true}
