@@ -106,8 +106,8 @@ a {
 }
 
 .hero_title {
-  font-size: 18.5vw;
-  height: 180px;
+  height: 200px;
+  font-size: 17vw;
   margin-top: 135px;
   -webkit-animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
