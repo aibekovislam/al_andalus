@@ -44,11 +44,14 @@ a {
 
 .hero {
   margin-top: 50px;
+  position: relative;
 }
 
 .btn_hero {
   width: 145px;
   border: none;
+  max-height: 50px;
+  height: 50px;
   cursor: pointer;
   border-radius: 100px;
   background: #fbb90f;
@@ -65,42 +68,25 @@ a {
   display: flex;
   transition-duration: 0.3s;
   border-radius: 5px;
-  padding: 10px;
+  align-items: center;
+  column-gap: 15px;
+  cursor: pointer;
+  font-size: 22px;
+  color: #ffffff;
 }
 
 .btn_two:hover {
-  background-color: rgba(38, 38, 38, 0.062);
+  color: #FBB90F;
 }
 
 .btn_hero_text {
   background-color: transparent;
   border: none;
-  width: 145px;
+  width: max-content;
   font-size: 22px;
   cursor: pointer;
-}
-
-.wrapper {
-  display: flex;
-  align-items: center;
-}
-
-.wrapper_title {
-  font-size: 6vw;
-  width: max-content;
-  line-height: 72px;
-  animation-name: showText;
-  animation-duration: 1s;
-}
-
-.wrapper_right {
-  width: max-content;
-  height: auto;
-}
-
-.hero_img {
-  width: 30vw;
-  height: 550px;
+  color: #ffffff;
+  transition-duration: 0.3s;
 }
 
 .arrow_btn {
@@ -117,6 +103,46 @@ a {
 
 .hero_img {
   transition: transform 0.1s ease-out;
+}
+
+.hero_title {
+  font-size: 18.5vw;
+  height: 180px;
+  margin-top: 135px;
+  -webkit-animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  z-index: 1;
+  position: relative;
+}
+
+.hero_text {
+  font-size: 26px;
+  line-height: 20px;
+  width: 300px;
+  position: absolute;
+  top: -2.5%;
+  right: 0;
+}
+
+.hero_image {
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  position: relative;
+}
+
+.content {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+}
+
+.content_text {
+  width: 830px;
+  color: #ffffff;
+  font-size: 40px;
+  z-index: 3;
+  position: relative;
 }
 
 /* antd btn */
@@ -136,6 +162,11 @@ a {
 
 .flex_btn {
   margin-top: 50px;
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  z-index: 3;
+  position: relative;
 }
 
 
@@ -182,5 +213,35 @@ a {
   }
   .btn_two {
     padding: 0px;
+  }
+  .content_text, .hero_title, .hero_image {
+    display: none;
+  }
+}
+
+@-webkit-keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
   }
 }

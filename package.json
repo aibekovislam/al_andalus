@@ -10,13 +10,17 @@
   },
   "dependencies": {
     "@plaiceholder/next": "^3.0.0",
+    "@react-three/drei": "^9.109.2",
+    "@react-three/fiber": "^8.16.8",
+    "@splinetool/react-spline": "^4.0.0",
     "antd": "^5.19.3",
+    "i": "^0.3.7",
     "next": "14.2.5",
+    "npm": "^10.8.2",
     "plaiceholder": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-intersection-observer": "^9.13.0",
-    "react-parallax-tilt": "^1.7.233",
+    "react-type-animation": "^3.2.0",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
