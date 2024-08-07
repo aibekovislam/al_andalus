@@ -56,9 +56,10 @@ export default function Home() {
                 <h1 className={`${helvetic700.className} hero_title`}>Al Andalus</h1>
                 <p className={`hero_text ${helvetic700.className}`}>Innovate, optimize processes, enhance customer engagement.</p>
               </div>
-              {initialBase64 && (
+              {/* {initialBase64 && (
                 <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
-              )}
+              )} */}
+              <div className='section_main_block'></div>
               <div className="content">
                 <TypeAnimation
                   preRenderFirstString={true}
