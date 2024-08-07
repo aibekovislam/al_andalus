@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react';
 import NavigationNavbar from "@/components/Navbar/NavigationNavbar";
 import { ConfigProvider, Flex } from "antd";
 import localFont from 'next/font/local';
@@ -7,10 +8,9 @@ import SectionCarousel from "@/sections/SectionCarousel";
 import SectionList from "@/sections/SectionList";
 import SectionThree from "@/sections/SectionThree";
 import Footer from "@/components/Footer/Footer";
-import Image from "next/image";
 import ArrowRight from "./assets/svgs/arrow_right.svg";
 import { TypeAnimation } from "react-type-animation";
-
+import DynamicImageBlur from "@/components/CustomImage/DynamicImageBlur";
 
 const helvetic700 = localFont({
   src: './assets/font/HelveticaNeueBold.otf'
@@ -24,6 +24,19 @@ const handleSmooth = (item = 'portfolio') => {
 }
 
 export default function Home() {
+  const [initialBase64, setInitialBase64] = useState('');
+
+  useEffect(() => {
+    const fetchBase64 = async () => {
+      const initialImage = '/images/cat.jpeg';
+      const res = await fetch(`/api/image-placeholder?src=${initialImage}`);
+      const { base64 } = await res.json();
+      setInitialBase64(base64);
+    };
+
+    fetchBase64();
+  }, []);
+
   return (
     <main>
       <ConfigProvider
@@ -41,19 +54,11 @@ export default function Home() {
             <div className="main-content">
               <div className="container">
                 <h1 className={`${helvetic700.className} hero_title`}>Al Andalus</h1>
-                {/* <TypeAnimation
-                  sequence={[
-                    'Al Andalus'
-                  ]}
-                  wrapper="h1"
-                  speed={50}
-                  repeat={1}
-                  className={`${helvetic700.className} hero_title`}
-                  cursor={false}
-                /> */}
                 <p className={`hero_text ${helvetic700.className}`}>Innovate, optimize processes, enhance customer engagement.</p>
               </div>
-              <Image src={require("./assets/section_main.png")} alt="" className="hero_image" />
+              {initialBase64 && (
+                <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+              )}
               <div className="content">
                 <TypeAnimation
                   preRenderFirstString={true}
@@ -84,9 +89,10 @@ export default function Home() {
             </div>
           </div>
         <div className="container">
-          <SectionCarousel />
           <SectionList />
-          <SectionThree />
+        </div>
+        <SectionCarousel />
+        <div className='container'>
           <Footer />
         </div>
       </ConfigProvider>

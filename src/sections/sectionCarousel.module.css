@@ -1,20 +1,87 @@
 .portfolio_section {
-    margin-top: 100px;
+    margin-top: 200px;
 }
 
 .portfolio_df {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .portfolio_title {
-    font-size: 40px;
+    font-size: 17vw;
+    color: #222222;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+}
+
+.portfolio_image1 {
+    position: relative;
 }
 
 .portfolio_df_btn {
     display: flex;
     column-gap: 5px;
+}
+
+.portfolio_title_with_btn1 {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 10%;
+    text-align: center;
+    z-index: 3;
+}
+
+.portfolio_title_with_btn1 h3 {
+    color: #ffffff;
+    font-size: 40px;
+}
+
+.btn_portfolio_1 {
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    cursor: pointer;
+    justify-content: center;
+}
+
+.circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background: #FBB90F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.portfolio_image2 {
+    position: relative;
+    margin-top: 120px;
+}
+
+.portfolio_image2_title {
+    font-size: 120px;
+    max-width: 1000px;
+    text-align: center;
+    line-height: 96px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 80%;
 }
 
 .btn {
@@ -44,7 +111,7 @@
 
 
 .section_two {
-    margin-top: 250px;
+    margin-top: 120px;
     position: relative;
     overflow: hidden;
     height: max-content;

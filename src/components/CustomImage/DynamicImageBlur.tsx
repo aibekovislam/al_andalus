@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-export default function DynamicImageBlur({ src, alt = 'alt', base64 }: any) {
+export default function DynamicImageBlur({ src, alt = 'alt', base64, className, style }: any) {
     if (!src || !base64) {
         return null;
     }
@@ -14,7 +14,8 @@ export default function DynamicImageBlur({ src, alt = 'alt', base64 }: any) {
             alt={alt}
             placeholder='blur'
             blurDataURL={base64}
-            className='section_two_image'
+            style={style}
+            className={className ? className : 'section_two_image'}
         />
     );
 }

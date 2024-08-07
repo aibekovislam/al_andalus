@@ -53,7 +53,7 @@ const SectionList = ({ initialImage, initialBase64 }: any) => {
 
       if (sectionRect.top <= 0 && sectionRect.bottom >= imageRect.height) {
         imageRef.current.style.position = 'fixed';
-        imageRef.current.style.top = '20px'; // Adjust based on your header height
+        imageRef.current.style.top = '20px';
       } else if (sectionRect.top > 0) {
         imageRef.current.style.position = 'absolute';
         imageRef.current.style.top = '0';
