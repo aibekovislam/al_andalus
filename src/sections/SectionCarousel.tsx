@@ -1,10 +1,10 @@
-'use client'
-
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import styles from './sectionCarousel.module.css';
 import localFont from 'next/font/local';
 import DynamicImageBlur from '@/components/CustomImage/DynamicImageBlur';
 import ArrowRight from '../app/assets/svgs/arrow_right.svg';
+import useIntersectionObserver from '@/app/hooks/useObserverHook';
+import { Parallax } from 'react-scroll-parallax';
 
 const helvetic700 = localFont({
     src: '../app/assets/font/HelveticaNeueBold.otf'
@@ -12,6 +12,7 @@ const helvetic700 = localFont({
 
 const SectionCarousel = () => {
   const [initialBase64, setInitialBase64] = useState('');
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const fetchBase64 = async () => {
@@ -24,21 +25,48 @@ const SectionCarousel = () => {
     fetchBase64();
   }, []);
 
+  const handleIntersection = (element: any) => {
+    if (image1Ref.current) {
+      image1Ref.current.classList.add('slide-up');
+    }
+    if(titleRef.current) {
+      titleRef.current.classList.add('focus-in-expand')
+    }
+    if (portfolioImage3Ref.current) {
+      portfolioImage3Ref.current.classList.add('fade-in-up');
+    }
+  };
+
+  const titleRef: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
+  const image1Ref: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
+  const sectionRef: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
+  const portfolioImage3Ref: any = useRef(null); // Reference for portfolio_image3
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+  
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+  
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, [sectionRef]);  
+
   return (
-    <section className={styles.portfolio_section} id='portfolio' >
+    <section ref={sectionRef} className={styles.portfolio_section} id='portfolio'>
         <div className={styles.portfolio_df}>
-            <h2 className={`${styles.portfolio_title} ${helvetic700.className}`}>Portfolio</h2>
-            {/* <div className={styles.portfolio_df_btn}>
-                <Button className={styles.btn}><span style={{ fontSize: "14px" }}>Больше</span></Button>
-                <div className={styles.arrow_btn} onClick={handlePrev}>
-                    <Image src={ArrowLeft} alt='arrow_left' />
-                </div>
-                <div className={styles.arrow_btn} onClick={handleNext}>
-                    <Image src={ArrowRight} alt='arrow_right' />
-                </div>
-            </div> */}
+            <h2 ref={titleRef} className={`${helvetic700.className}`}>Portfolio</h2>
         </div>
-        <div className={styles.portfolio_image1}>
+        <div ref={image1Ref} className={styles.portfolio_image1}>
           {initialBase64 && (
             <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
           )}
@@ -54,11 +82,15 @@ const SectionCarousel = () => {
         </div>
         <div className={styles.portfolio_image2}>
           <div className={`${styles.portfolio_image2_title} ${helvetic700.className}`}>Mobile app for ordering football fields</div>
-          {initialBase64 && (
-            <DynamicImageBlur style={{marginTop: "50px"}} src={"/images/pole_portfolio.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+          {isVisible && (
+            <Parallax translateY={[10, -40]} speed={30}>
+              {initialBase64 && (
+                <DynamicImageBlur style={{ marginTop: "50px" }} src={"/images/pole_portfolio.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+              )}
+            </Parallax>
           )}
         </div>
-        <div className={styles.portfolio_image1}>
+        <div ref={portfolioImage3Ref} className={styles.portfolio_image3}>
           {initialBase64 && (
             <DynamicImageBlur src={"/images/portfolio_image3.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
           )}
