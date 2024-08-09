@@ -12,6 +12,7 @@ export default function DynamicImageBlur({ src, alt = 'alt', base64, className, 
             height={450}
             src={src}
             alt={alt}
+            quality={75}
             placeholder='blur'
             blurDataURL={base64}
             style={style}
