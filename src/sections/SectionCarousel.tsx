@@ -86,13 +86,9 @@ const SectionCarousel = ({ initialBase64_2, initialBase64_3, initialBase64_4 }: 
         </div>
         <div className={styles.portfolio_image2}>
           <div className={`${styles.portfolio_image2_title} ${helvetic700.className}`}>Mobile app for ordering football fields</div>
-          {isVisible && (
             <Parallax translateY={[10, -40]} speed={30}>
-              {initialBase64_3 && (
-                <DynamicImageBlur src={"/images/pole_portfolio.webp"} key={0} base64={initialBase64_3} alt="section two image" className={styles.hero_image2} />
-              )}
+              <DynamicImageBlur src={"/images/pole_portfolio.webp"} key={0} base64={initialBase64_3} alt="section two image" className={styles.hero_image2} />
             </Parallax>
-          )}
         </div>
         <div className={`${styles.portfolio_image3}`}>
           {initialBase64_4 && (
