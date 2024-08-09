@@ -10,7 +10,7 @@ const helvetic700 = localFont({
     src: '../app/assets/font/HelveticaNeueBold.otf'
 });
 
-const SectionCarousel = () => {
+const SectionCarousel = ({ initialBase64_2, initialBase64_3 }: any) => {
   const [initialBase64, setInitialBase64] = useState('');
   const [isVisible, setIsVisible] = useState(false);
 
@@ -71,8 +71,8 @@ const SectionCarousel = () => {
             <h2 ref={titleRef} className={`${helvetic700.className}`}>Portfolio</h2>
         </div>
         <div ref={image1Ref} className={styles.portfolio_image1}>
-          {initialBase64 && (
-            <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image} />
+          {initialBase64_2 && (
+            <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64_2} alt="section two image" className={styles.hero_image} />
           )}
           <div className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Web Site for architectural<br/> company Tash Building</h3>
@@ -88,8 +88,8 @@ const SectionCarousel = () => {
           <div className={`${styles.portfolio_image2_title} ${helvetic700.className}`}>Mobile app for ordering football fields</div>
           {isVisible && (
             <Parallax translateY={[10, -40]} speed={30}>
-              {initialBase64 && (
-                <DynamicImageBlur src={"/images/pole_portfolio.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image2} />
+              {initialBase64_3 && (
+                <DynamicImageBlur src={"/images/pole_portfolio.png"} key={0} base64={initialBase64_3} alt="section two image" className={styles.hero_image2} />
               )}
             </Parallax>
           )}

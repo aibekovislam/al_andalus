@@ -27,17 +27,35 @@ const handleSmooth = (item = 'portfolio') => {
 
 export default function Home() {
   const [initialBase64, setInitialBase64] = useState('');
+  const [ initialBase64_2, setInitialBase64_2 ] = useState('');
+  const [ initialBase64_3, setInitialBase64_3 ] = useState('');
 
   useEffect(() => {
     const fetchBase64 = async () => {
-      const initialImage = '/images/section_main.png';
-      const res = await fetch(`/api/image-placeholder?src=${initialImage}`);
-      const { base64 } = await res.json();
-      setInitialBase64(base64);
+      const initialImage1 = '/images/section_main.png';
+      const initialImage2 = '/images/portfolio_image.png';
+      const initialImage3 = '/images/pole_portfolio.png';
+      
+      try {
+        const res1 = await fetch(`/api/image-placeholder?src=${initialImage1}`);
+        const { base64: base64_1 } = await res1.json();
+        setInitialBase64(base64_1);
+  
+        const res2 = await fetch(`/api/image-placeholder?src=${initialImage2}`);
+        const { base64: base64_2 } = await res2.json();
+        setInitialBase64_2(base64_2);
+  
+        const res3 = await fetch(`/api/image-placeholder?src=${initialImage3}`);
+        const { base64: base64_3 } = await res3.json();
+        setInitialBase64_3(base64_3);
+        
+      } catch (error) {
+        console.error('Ошибка при загрузке изображений:', error);
+      }
     };
-
+  
     fetchBase64();
-  }, []);
+  }, []);  
 
   return (
     <main>
@@ -49,7 +67,7 @@ export default function Home() {
           }
         }}
       >
-        { initialBase64 ? (
+        { initialBase64 && initialBase64_2 && initialBase64_3 ? (
           <ParallaxProvider>
           <div className="container">
             <NavigationNavbar />
@@ -138,7 +156,7 @@ export default function Home() {
           <div className="container">
             <SectionList />
           </div>
-          <SectionCarousel />
+          <SectionCarousel initialBase64_2={initialBase64_2} initialBase64_3={initialBase64_3} />
           <div className='container'>
             <Footer />
           </div>
