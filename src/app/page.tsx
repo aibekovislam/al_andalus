@@ -74,7 +74,7 @@ export default function Home() {
           }
         }}
       >
-        { initialBase64 && initialBase64_2 && initialBase64_4 ? (
+        { initialBase64 && initialBase64_2 ? (
           <ParallaxProvider>
           <div className="container">
             <NavigationNavbar />
