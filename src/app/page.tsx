@@ -29,12 +29,15 @@ export default function Home() {
   const [initialBase64, setInitialBase64] = useState('');
   const [ initialBase64_2, setInitialBase64_2 ] = useState('');
   const [ initialBase64_3, setInitialBase64_3 ] = useState('');
+  const [ initialBase64_4, setInitialBase64_4 ] = useState('');
 
   useEffect(() => {
     const fetchBase64 = async () => {
       const initialImage1 = '/images/section_main.webp';
       const initialImage2 = '/images/portfolio_image.webp';
       const initialImage3 = '/images/pole_portfolio.webp';
+      const initialImage4 = '/images/portfolio_image3.webp';
+      
       
       try {
         const res1 = await fetch(`/api/image-placeholder?src=${initialImage1}`);
@@ -48,6 +51,10 @@ export default function Home() {
         const res3 = await fetch(`/api/image-placeholder?src=${initialImage3}`);
         const { base64: base64_3 } = await res3.json();
         setInitialBase64_3(base64_3);
+
+        const res4 = await fetch(`/api/image-placeholder?src=${initialImage4}`);
+        const { base64: base64_4 } = await res4.json();
+        setInitialBase64_4(base64_3);
         
       } catch (error) {
         console.error('Ошибка при загрузке изображений:', error);
@@ -67,7 +74,7 @@ export default function Home() {
           }
         }}
       >
-        { initialBase64 && initialBase64_2 && initialBase64_3 ? (
+        { initialBase64 ? (
           <ParallaxProvider>
           <div className="container">
             <NavigationNavbar />
@@ -156,7 +163,7 @@ export default function Home() {
           <div className="container">
             <SectionList />
           </div>
-          <SectionCarousel initialBase64_2={initialBase64_2} initialBase64_3={initialBase64_3} />
+          <SectionCarousel initialBase64_2={initialBase64_2} initialBase64_3={initialBase64_3} initialBase64_4={initialBase64_4} />
           <div className='container'>
             <Footer />
           </div>

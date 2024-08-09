@@ -10,7 +10,7 @@ const helvetic700 = localFont({
     src: '../app/assets/font/HelveticaNeueBold.otf'
 });
 
-const SectionCarousel = ({ initialBase64_2, initialBase64_3 }: any) => {
+const SectionCarousel = ({ initialBase64_2, initialBase64_3, initialBase64_4 }: any) => {
   const [initialBase64, setInitialBase64] = useState('');
   const [isVisible, setIsVisible] = useState(false);
 
@@ -95,8 +95,8 @@ const SectionCarousel = ({ initialBase64_2, initialBase64_3 }: any) => {
           )}
         </div>
         <div className={`${styles.portfolio_image3}`}>
-          {initialBase64 && (
-            <DynamicImageBlur src={"/images/portfolio_image3.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image} />
+          {initialBase64_4 && (
+            <DynamicImageBlur src={"/images/portfolio_image3.webp"} key={0} base64={initialBase64_4} alt="section two image" className={styles.hero_image} />
           )}
           <a target='_blank' href='https://www.turanelectronics.kg/' className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Online shop Turan<br/> Electronics</h3>
