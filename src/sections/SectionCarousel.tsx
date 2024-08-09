@@ -91,9 +91,7 @@ const SectionCarousel = ({ initialBase64_2, initialBase64_3, initialBase64_4 }: 
             </Parallax>
         </div>
         <div className={`${styles.portfolio_image3}`}>
-          {initialBase64_4 && (
-            <DynamicImageBlur src={"/images/portfolio_image3.webp"} key={0} base64={initialBase64_4} alt="section two image" className={styles.hero_image} />
-          )}
+          <DynamicImageBlur src={"/images/portfolio_image3.webp"} key={0} base64={initialBase64_4} alt="section two image" className={styles.hero_image} />
           <a target='_blank' href='https://www.turanelectronics.kg/' className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Online shop Turan<br/> Electronics</h3>
             <div className={`${styles.btn_portfolio_1} ${helvetic700.className}`}>
