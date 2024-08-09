@@ -323,7 +323,7 @@ a {
   .hero_title_mobile {
     margin-top: 20px;
     text-align: center;
-    font-size: 17vw;
+    font-size: 15vw;
     height: 45px;
     -webkit-animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	        animation: focus-in-expand 2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
