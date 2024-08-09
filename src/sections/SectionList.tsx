@@ -8,16 +8,16 @@ const helvetic700 = localFont({
 });
 
 const services = [
-  { name: 'Frontend', img: "/images/cat.jpeg" },
-  { name: 'Mobile development', img: "/images/cat2.jpg" },
-  { name: 'UX.UI design', img: "/images/cat3.jpg" },
-  { name: 'Backend', img: "/images/cat4.webp" },
-  { name: 'AI development', img: "/images/cat5.webp" },
-  { name: 'Product development', img: "/images/cat6.jpg" },
-  { name: 'Web design', img: "/images/cat7.webp" },
-  { name: 'Web Site', img: "/images/cat8.jpg" },
-  { name: 'Graphic design', img: "/images/cat9.jpg" },
-  { name: '3D design', img: "/images/cat10.jpg" },
+  { name: 'Frontend /', img: "/images/cat.jpeg" },
+  { name: 'Mobile development /', img: "/images/cat2.jpg" },
+  { name: 'UX.UI design /', img: "/images/cat3.jpg" },
+  { name: 'Backend /', img: "/images/cat4.webp" },
+  { name: 'AI development /', img: "/images/cat5.webp" },
+  { name: 'Product development /', img: "/images/cat6.jpg" },
+  { name: 'Web design /', img: "/images/cat7.webp" },
+  { name: 'Web Site /', img: "/images/cat8.jpg" },
+  { name: 'Graphic design /', img: "/images/cat9.jpg" },
+  { name: '3D design /', img: "/images/cat10.jpg" },
   { name: 'Branding', img: "/images/cat11.jpg" }
 ];
 

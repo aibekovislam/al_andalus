@@ -29,18 +29,22 @@ const SectionCarousel = () => {
     if (image1Ref.current) {
       image1Ref.current.classList.add('slide-up');
     }
-    if(titleRef.current) {
-      titleRef.current.classList.add('focus-in-expand')
+    if (titleRef.current) {
+      titleRef.current.classList.add('focus-in-expand');
     }
-    if (portfolioImage3Ref.current) {
-      portfolioImage3Ref.current.classList.add('fade-in-up');
+  };
+
+  const handlePortfolioImage3Intersection = (element: any) => {
+    if (portfolioImage3Ref.current === element) {
+      console.log(element)
+      // element.classList.add('fade-in-up');
     }
   };
 
   const titleRef: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
   const image1Ref: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
   const sectionRef: any = useIntersectionObserver(handleIntersection, { threshold: 0.5 });
-  const portfolioImage3Ref: any = useRef(null); // Reference for portfolio_image3
+  const portfolioImage3Ref: any = useIntersectionObserver(handlePortfolioImage3Intersection, { threshold: 0.5 });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -59,7 +63,7 @@ const SectionCarousel = () => {
         observer.unobserve(sectionRef.current);
       }
     };
-  }, [sectionRef]);  
+  }, [sectionRef]);
 
   return (
     <section ref={sectionRef} className={styles.portfolio_section} id='portfolio'>
@@ -68,16 +72,16 @@ const SectionCarousel = () => {
         </div>
         <div ref={image1Ref} className={styles.portfolio_image1}>
           {initialBase64 && (
-            <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+            <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image} />
           )}
           <div className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Web Site for architectural<br/> company Tash Building</h3>
-            <div className={`${styles.btn_portfolio_1} ${helvetic700.className}`}>
+            <a href='#' className={`${styles.btn_portfolio_1} ${helvetic700.className}`}>
               View Site
               <div className={styles.circle}>
                 <img src={ArrowRight.src} alt='arrow right' />
               </div>
-            </div>
+            </a>
           </div>
         </div>
         <div className={styles.portfolio_image2}>
@@ -85,16 +89,16 @@ const SectionCarousel = () => {
           {isVisible && (
             <Parallax translateY={[10, -40]} speed={30}>
               {initialBase64 && (
-                <DynamicImageBlur style={{ marginTop: "50px" }} src={"/images/pole_portfolio.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+                <DynamicImageBlur src={"/images/pole_portfolio.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image2} />
               )}
             </Parallax>
           )}
         </div>
-        <div ref={portfolioImage3Ref} className={styles.portfolio_image3}>
+        <div className={`${styles.portfolio_image3}`}>
           {initialBase64 && (
-            <DynamicImageBlur src={"/images/portfolio_image3.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" />
+            <DynamicImageBlur src={"/images/portfolio_image3.png"} key={0} base64={initialBase64} alt="section two image" className={styles.hero_image} />
           )}
-          <div className={styles.portfolio_title_with_btn1}>
+          <a target='_blank' href='https://www.turanelectronics.kg/' className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Online shop Turan<br/> Electronics</h3>
             <div className={`${styles.btn_portfolio_1} ${helvetic700.className}`}>
               View Site
@@ -102,10 +106,10 @@ const SectionCarousel = () => {
                 <img src={ArrowRight.src} alt='arrow right' />
               </div>
             </div>
-          </div>
+          </a>
         </div>
     </section>
-  )
-}
+  );
+};
 
 export default SectionCarousel;

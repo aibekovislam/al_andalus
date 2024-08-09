@@ -61,7 +61,7 @@ export default function Home() {
                   <p className={`hero_text ${helvetic700.className}`}>Innovate, optimize processes, enhance customer engagement.</p>
                 </div>
                 {initialBase64 && (
-                  <div style={{ height: '800px', position: "relative", width: "100%" }}>
+                  <div className='hero_image_block'>
                     <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" pri={true} />
                   </div>
                 )}
@@ -96,6 +96,44 @@ export default function Home() {
                   </div>
                 </div>
               </div>
+              <div className="main-content_mobile">
+                <div className="container">
+                  <TypeAnimation wrapper='p' cursor={false} preRenderFirstString={false} speed={70} sequence={['Innovate, optimize processes, enhance customer engagement.']} className={`hero_text_mobile ${helvetic700.className}`}></TypeAnimation>
+                  <h1 className={`${helvetic700.className} hero_title_mobile`}>Al Andalus</h1>
+                </div>
+                {initialBase64 && (
+                  <div className='hero_image_block_mobile'>
+                    <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image_mobile" pri={true} />
+                  </div>
+                )}
+                <div className="content_mobile">
+                  <TypeAnimation
+                    preRenderFirstString={true}
+                    sequence={[
+                      'At AL Andalus, we deliver innovative IT solutions tailored to your business. Located in Dubai, we specialize in comprehensive digital transformation, optimizing processes, and enhancing customer engagement.',
+                      1000,
+                      'At AL Andalus, we deliver innovative IT solutions tailored to your business. Located in Dubai, we specialize in comprehensive digital transformation, optimizing processes, and boosting client interactions.',
+                      1000,
+                      'At AL Andalus, we deliver innovative IT solutions tailored to your business. Located in Dubai, we specialize in comprehensive digital transformation, optimizing processes, and improving customer connections.',
+                      1000,
+                      'At AL Andalus, we deliver innovative IT solutions tailored to your business. Located in Dubai, we specialize in comprehensive digital transformation, optimizing processes, and elevating user experiences.',
+                    ]}
+                    wrapper="p"
+                    speed={50}
+                    repeat={Infinity}
+                    className={`content_text_mobile ${helvetic700.className}`}
+                  />
+                  <div className="flex_btn_mobile">
+                    <button className={`btn_hero ${helvetic700.className}`}><span className={helvetic700.className}>Let’s Talk</span></button>
+                    <div onClick={() => handleSmooth()} className={`${helvetic700.className} btn_two`} >
+                    See works
+                      <div onClick={() => handleSmooth()} className="arrow_btn">
+                        <img src={ArrowRight.src} alt="arrow-right" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
           </div>
           <div className="container">
             <SectionList />
@@ -106,7 +144,7 @@ export default function Home() {
           </div>
         </ParallaxProvider>
         ) : (
-          <div>Loading...</div>
+          <div className={`loading ${helvetic700.className}`}>Loading...</div>
         ) }
       </ConfigProvider>
     </main>
