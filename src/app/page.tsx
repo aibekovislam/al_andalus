@@ -32,9 +32,9 @@ export default function Home() {
 
   useEffect(() => {
     const fetchBase64 = async () => {
-      const initialImage1 = '/images/section_main.png';
-      const initialImage2 = '/images/portfolio_image.png';
-      const initialImage3 = '/images/pole_portfolio.png';
+      const initialImage1 = '/images/section_main.webp';
+      const initialImage2 = '/images/portfolio_image.webp';
+      const initialImage3 = '/images/pole_portfolio.webp';
       
       try {
         const res1 = await fetch(`/api/image-placeholder?src=${initialImage1}`);
@@ -80,7 +80,7 @@ export default function Home() {
                 </div>
                 {initialBase64 && (
                   <div className='hero_image_block'>
-                    <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image" pri={true} />
+                    <DynamicImageBlur src={"/images/section_main.webp"} key={0} base64={initialBase64} alt="section two image" className="hero_image" pri={true} />
                   </div>
                 )}
                 {/* { !initialBase64 ? (
@@ -121,7 +121,7 @@ export default function Home() {
                 </div>
                 {initialBase64 && (
                   <div className='hero_image_block_mobile'>
-                    <DynamicImageBlur src={"/images/section_main.png"} key={0} base64={initialBase64} alt="section two image" className="hero_image_mobile" pri={true} />
+                    <DynamicImageBlur src={"/images/section_main.webp"} key={0} base64={initialBase64} alt="section two image" className="hero_image_mobile" pri={true} />
                   </div>
                 )}
                 <div className="content_mobile">

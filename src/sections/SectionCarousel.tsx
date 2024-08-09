@@ -72,7 +72,7 @@ const SectionCarousel = ({ initialBase64_2, initialBase64_3 }: any) => {
         </div>
         <div ref={image1Ref} className={styles.portfolio_image1}>
           {initialBase64_2 && (
-            <DynamicImageBlur src={"/images/portfolio_image.png"} key={0} base64={initialBase64_2} alt="section two image" className={styles.hero_image} />
+            <DynamicImageBlur src={"/images/portfolio_image.webp"} key={0} base64={initialBase64_2} alt="section two image" className={styles.hero_image} />
           )}
           <div className={styles.portfolio_title_with_btn1}>
             <h3 className={helvetic700.className}>Web Site for architectural<br/> company Tash Building</h3>
@@ -89,7 +89,7 @@ const SectionCarousel = ({ initialBase64_2, initialBase64_3 }: any) => {
           {isVisible && (
             <Parallax translateY={[10, -40]} speed={30}>
               {initialBase64_3 && (
-                <DynamicImageBlur src={"/images/pole_portfolio.png"} key={0} base64={initialBase64_3} alt="section two image" className={styles.hero_image2} />
+                <DynamicImageBlur src={"/images/pole_portfolio.webp"} key={0} base64={initialBase64_3} alt="section two image" className={styles.hero_image2} />
               )}
             </Parallax>
           )}
