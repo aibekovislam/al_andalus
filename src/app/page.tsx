@@ -111,7 +111,7 @@ export default function Home() {
                     className={`content_text ${helvetic700.className}`}
                   />
                   <div className="flex_btn">
-                    <button className={`btn_hero ${helvetic700.className}`}><span className={helvetic700.className}>Let’s Talk</span></button>
+                    <button className={`btn_hero ${helvetic700.className}`}><a href='https://telegram.me/Markus_Loni' target='_blank' className={helvetic700.className}>Let’s Talk</a></button>
                     <div onClick={() => handleSmooth()} className={`${helvetic700.className} btn_two`} >
                     See works
                       <div onClick={() => handleSmooth()} className="arrow_btn">
@@ -149,7 +149,7 @@ export default function Home() {
                     className={`content_text_mobile ${helvetic700.className}`}
                   />
                   <div className="flex_btn_mobile">
-                    <button className={`btn_hero ${helvetic700.className}`}><span className={helvetic700.className}>Let’s Talk</span></button>
+                    <button className={`btn_hero ${helvetic700.className}`}><a href='https://telegram.me/Markus_Loni' target='_blank' style={{ textDecoration: 'none' }} className={helvetic700.className}>Let’s Talk</a></button>
                     <div onClick={() => handleSmooth()} className={`${helvetic700.className} btn_two`} >
                     See works
                       <div onClick={() => handleSmooth()} className="arrow_btn">

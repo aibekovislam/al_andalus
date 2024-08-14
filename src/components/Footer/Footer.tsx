@@ -11,7 +11,7 @@ const helvetic700 = localFont({
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id='contacts'>
         <div className={styles.footer_items}>
             <div className={styles.footer_item}>
                 <ul className={styles.footer_navigation}>

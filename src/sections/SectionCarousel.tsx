@@ -11,19 +11,7 @@ const helvetic700 = localFont({
 });
 
 const SectionCarousel = ({ initialBase64_2, initialBase64_3, initialBase64_4 }: any) => {
-  const [initialBase64, setInitialBase64] = useState('');
   const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const fetchBase64 = async () => {
-      const initialImage = '/images/section_main.png';
-      const res = await fetch(`/api/image-placeholder?src=${initialImage}`);
-      const { base64 } = await res.json();
-      setInitialBase64(base64);
-    };
-
-    fetchBase64();
-  }, []);
 
   const handleIntersection = (element: any) => {
     if (image1Ref.current) {

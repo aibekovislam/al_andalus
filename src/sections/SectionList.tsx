@@ -8,20 +8,19 @@ const helvetic700 = localFont({
 });
 
 const services = [
-  { name: 'Frontend /', img: "/images/cat.jpeg" },
-  { name: 'Mobile development /', img: "/images/cat2.jpg" },
-  { name: 'UX.UI design /', img: "/images/cat3.jpg" },
-  { name: 'Backend /', img: "/images/cat4.webp" },
-  { name: 'AI development /', img: "/images/cat5.webp" },
-  { name: 'Product development /', img: "/images/cat6.jpg" },
-  { name: 'Web design /', img: "/images/cat7.webp" },
-  { name: 'Web Site /', img: "/images/cat8.jpg" },
-  { name: 'Graphic design /', img: "/images/cat9.jpg" },
-  { name: '3D design /', img: "/images/cat10.jpg" },
-  { name: 'Branding', img: "/images/cat11.jpg" }
+  { name: 'Frontend /', img: "/images/image23.webp" },
+  { name: 'Mobile development /', img: "/images/image24.webp" },
+  { name: 'UX.UI design /', img: "/images/image25.webp" },
+  { name: 'Backend /', img: "/images/image26.webp" },
+  { name: 'AI development /', img: "/images/image27.webp" },
+  { name: 'Product development /', img: "/images/image28.webp" },
+  { name: 'Web design /', img: "/images/image29.webp" },
+  { name: 'Web Site /', img: "/images/image30.webp" },
+  { name: 'Graphic design /', img: "/images/Scene11.webp" },
+  { name: '3D design /', img: "/images/Scene12.webp" },
 ];
 
-const defaultImage = "/images/cat.jpeg";
+const defaultImage = "/images/image23.webp";
 
 const SectionList = ({ initialImage, initialBase64 }: any) => {
   const [currentImage, setCurrentImage] = useState(initialImage ? initialImage : defaultImage);
@@ -124,7 +123,7 @@ const SectionList = ({ initialImage, initialBase64 }: any) => {
 }
 
 export async function getServerSideProps() {
-  const initialImage = '/images/cat.jpeg';
+  const initialImage = '/images/image23.webp';
   const res = await fetch(`http://localhost:3000/api/image-placeholder?src=${initialImage}`);
   const { base64 } = await res.json();
 
