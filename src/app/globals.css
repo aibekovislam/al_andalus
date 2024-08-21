@@ -150,6 +150,11 @@ a {
   position: relative;
   animation: animateTest 2s ease;
 }
+.text_image_under {
+  margin-top: 30px;
+  max-width: 345px;
+  font-size: 20px;
+}
 
 .hero_image_block {
   width: 100%;
